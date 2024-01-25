@@ -30,6 +30,7 @@ class UserServiceTest {
         mockRequest = Mockito.mock(HttpServletRequest.class);
         mockSession = Mockito.mock(HttpSession.class);
     }
+
     @Test
     void validationLoginReturnTrue() {
         when(mockRequest.getParameter("email")).thenReturn("test@example.com");
@@ -38,6 +39,7 @@ class UserServiceTest {
 
         Assertions.assertTrue(service.validation(mockRequest));
     }
+
     @Test
     void validationLoginReturnFalse() {
         when(mockRequest.getParameter("email")).thenReturn("test@not.found");
@@ -53,6 +55,7 @@ class UserServiceTest {
 
         Assertions.assertTrue(UserService.isLoggedIn(mockRequest));
     }
+
     @Test
     void isLoggedInReturnFalse() {
         when(mockRequest.getSession()).thenReturn(mockSession);

@@ -17,7 +17,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 class QuestServiceTest {
-
     HttpServletRequest mockRequest;
     HttpServletResponse mockResponse;
     DatabaseApplication<Question> dbQuestion;
@@ -41,6 +40,7 @@ class QuestServiceTest {
 
         Assertions.assertThrows(QuestionNotFoundException.class, () -> service.startingStage(mockRequest, mockResponse));
     }
+
     @Test
     public void startingStageShouldThrowAnswerNotFoundException() {
         List<Question> questions = dbQuestion.importData("json/testDataQuestion.json", Question.class);
@@ -51,7 +51,6 @@ class QuestServiceTest {
 
         Assertions.assertThrows(AnswerNotFoundException.class, () -> service.startingStage(mockRequest, mockResponse));
     }
-
 
     @Test
     public void getNextStageShouldThrowQuestionNotFoundException() {
@@ -70,6 +69,7 @@ class QuestServiceTest {
 
         Assertions.assertThrows(QuestionNotFoundException.class, () -> service.getNextStage(mockRequest, mockResponse));
     }
+
     @Test
     public void getNextStageShouldThrowAnswerNotFoundException() {
         List<Question> questions = dbQuestion.importData("json/testDataQuestion.json", Question.class);
