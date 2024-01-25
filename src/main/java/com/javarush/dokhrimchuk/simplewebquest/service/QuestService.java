@@ -60,12 +60,12 @@ public class QuestService {
     public void getNextStage(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         JSONObject jsonObject = readJsonRequest(request);
         NextStageResponse nextStageResponse = new NextStageResponse();
-        String answerId = jsonObject.getString("answer");
+        String nextQuestionId = jsonObject.getString("answer");
 
-        Optional<Question> question = questionRepository.getById(Integer.parseInt(answerId));
+        Optional<Question> question = questionRepository.getById(Integer.parseInt(nextQuestionId));
 
         if(question.isEmpty()) {
-            String errorMessage = String.format("next question not found (for answer id: %s)", answerId);
+            String errorMessage = String.format("next question not found (for question id: %s)", nextQuestionId);
             log.error(errorMessage);
             throw new QuestionNotFoundException("next question not found");
         }
@@ -100,7 +100,7 @@ public class QuestService {
         writer.close();
     }
 
-    private void countAttempts(HttpSession session) {
+    protected void countAttempts(HttpSession session) {
         Integer countAttempts = (Integer) session.getAttribute("countAttempts");
         if(countAttempts == null) {
             countAttempts = 1;
@@ -111,7 +111,7 @@ public class QuestService {
         session.setAttribute("countAttempts", countAttempts);
     }
 
-    private JSONObject readJsonRequest(HttpServletRequest request) throws IOException {
+    protected JSONObject readJsonRequest(HttpServletRequest request) throws IOException {
         StringBuilder buffer = new StringBuilder();
         String line;
 
@@ -122,7 +122,7 @@ public class QuestService {
         return new JSONObject(buffer.toString());
     }
 
-    private HttpServletResponseWrapper getResponseWrapper(StringWriter stringWriter, HttpServletResponse response) {
+    protected HttpServletResponseWrapper getResponseWrapper(StringWriter stringWriter, HttpServletResponse response) {
         PrintWriter fragmentWriter = new PrintWriter(stringWriter);
         return new HttpServletResponseWrapper(response) {
             @Override
