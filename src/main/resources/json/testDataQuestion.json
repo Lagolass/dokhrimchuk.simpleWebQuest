@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "text": "testQuestion1",
+    "isStart": true,
+    "isFinal": false
+  },
+  {
+    "id": 2,
+    "text": "testQuestion2",
+    "isStart": false,
+    "isFinal": true
+  },
+  {
+    "id": 3,
+    "text": "testQuestion3",
+    "isStart": false,
+    "isFinal": false
+  }
+]

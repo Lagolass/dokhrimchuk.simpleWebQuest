@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "text": "Відкрити двері і дізнатися, що ховається всередині.",
+    "questionId": 1,
+    "nextQuestionId": 2
+  },
+  {
+    "id": 2,
+    "text": "Поглянути навколо і виявити інші сліди цивілізації.",
+    "questionId": 1,
+    "nextQuestionId": 8
+  },
+  {
+    "id": 3,
+    "text": "Спробувати згадати, як ти потрапив на острів та знайти початкове місце свого приземлення.",
+    "questionId": 1,
+    "nextQuestionId": 12
+  },
+  {
+    "id": 4,
+    "text": "Вивчити записи і розгадати таємницю острова.",
+    "questionId": 2,
+    "nextQuestionId": 4
+  },
+  {
+    "id": 5,
+    "text": "Пропустити записи і зосередитися на виході з хижини.",
+    "questionId": 2,
+    "nextQuestionId": 1
+  },
+  {
+    "id": 6,
+    "text": "Відправитись в ліс до лабіринту зі скарбом",
+    "questionId": 4,
+    "nextQuestionId": 5
+  },
+  {
+    "id": 7,
+    "text": "Забути про отриману інформацію, та вийти з хижини",
+    "questionId": 4,
+    "nextQuestionId": 2
+  },
+  {
+    "id": 8,
+    "text": "Обрати перший портал",
+    "questionId": 5,
+    "nextQuestionId": 6
+  },
+  {
+    "id": 9,
+    "text": "Обрати другий портал",
+    "questionId": 5,
+    "nextQuestionId": 7
+  },
+  {
+    "id": 10,
+    "text": "Забрати із собою",
+    "questionId": 8,
+    "nextQuestionId": 9
+  },
+  {
+    "id": 11,
+    "text": "Лишити де знайшов",
+    "questionId": 8,
+    "nextQuestionId": 11
+  },
+  {
+    "id": 12,
+    "text": "Відремонтувати човен знайденими інструментами",
+    "questionId": 9,
+    "nextQuestionId": 10
+  },
+  {
+    "id": 13,
+    "text": "Повернутись за інструментами та відремонтувати човен",
+    "questionId": 11,
+    "nextQuestionId": 10
+  },
+  {
+    "id": 14,
+    "text": "Оглядати берег далі",
+    "questionId": 12,
+    "nextQuestionId": 8
+  },
+  {
+    "id": 15,
+    "text": "Оглянути ліс, який знаходится за хижиною",
+    "questionId": 12,
+    "nextQuestionId": 13
+  }
+]
